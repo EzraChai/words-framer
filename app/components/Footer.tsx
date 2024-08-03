@@ -28,7 +28,7 @@ export function Content() {
           and Kuala Lumpur going on a trip together to Negeri Sembilan.
         </p>
       </div>
-      <h1 className=" p-12 absolute text-pink-400 bottom-0 text-[10rem] font-bold ">
+      <h1 className=" p-4 md:p-12 absolute text-pink-400 bottom-0 text-[6rem] leading-[1] lg:text-[10rem] font-bold ">
         Road To Negeri Sembilan
       </h1>
       <div className="absolute bottom-0 text-neutral-400 left-0 px-2">

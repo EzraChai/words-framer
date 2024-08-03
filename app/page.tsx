@@ -1,5 +1,4 @@
 "use client";
-export * from "lenis/react";
 import Image from "next/image";
 import IMG_2237 from "./assets/images/IMG_2237.jpg";
 import FIMO_1722155388436 from "./assets/images/FIMO_1722155388436.jpg";
@@ -13,6 +12,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 import Footer from "./components/Footer";
 import Paragrah from "./Paragraph";
+import Hero from "./components/Hero";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ export default function Home() {
     offset: ["start start", "end end"],
   });
 
-  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 3.5]);
+  const scale4 = useTransform(scrollYProgress, [0, 1], [1, 3]);
   const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
   const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
   const scale7 = useTransform(scrollYProgress, [0, 1], [1, 7]);
@@ -29,14 +29,14 @@ export default function Home() {
 
   return (
     <ReactLenis root>
-      <div className="h-[100vh]">sd</div>
+      <Hero />
       <div ref={containerRef} className="h-[300vh] relative ">
-        <div className="sticky top-0 w-full h-[100vh] bg-neutral-800 overflow-hidden">
+        <div className="sticky top-0 w-full h-[100vh] bg-lime-300 overflow-hidden">
           <motion.div
             style={{ scale: scale4 }}
             className="absolute top-0 w-full h-full flex justify-center items-center "
           >
-            <div className="relative w-[25vw] h-[25vh]">
+            <div className="relative w-[25vw] h-[25vh] rounded-lg overflow-hidden">
               <Image
                 fill
                 className=" object-cover"
@@ -50,7 +50,7 @@ export default function Home() {
             style={{ scale: scale5 }}
             className="absolute top-0 w-full h-full flex justify-center items-center "
           >
-            <div className=" relative top-[-30vh] h-[30vh] w-[35vw] left-[5vw]">
+            <div className=" relative top-[-30vh] h-[30vh] w-[35vw] left-[5vw] rounded-lg overflow-hidden">
               <Image
                 fill
                 src={FIMO_1722247103461}
@@ -64,7 +64,7 @@ export default function Home() {
             style={{ scale: scale8 }}
             className="absolute top-0 w-full h-full flex justify-center items-center overflow-hidden"
           >
-            <div className=" relative top-[-10vh] h-[45vh] w-[15vw] left-[-22.5vw]">
+            <div className=" relative top-[-10vh] h-[45vh] w-[15vw] left-[-22.5vw] rounded-lg overflow-hidden">
               <Image
                 className=" object-cover"
                 placeholder="blur"
@@ -78,7 +78,7 @@ export default function Home() {
             style={{ scale: scale5 }}
             className="absolute top-0 w-full h-full flex justify-center items-center overflow-hidden"
           >
-            <div className=" relative h-[25vh] w-[25vw] left-[27.5vw]">
+            <div className=" relative h-[25vh] w-[25vw] left-[27.5vw] rounded-lg overflow-hidden">
               <Image
                 className=" object-cover"
                 placeholder="blur"
@@ -92,7 +92,7 @@ export default function Home() {
             style={{ scale: scale7 }}
             className="absolute top-0 w-full h-full flex justify-center items-center overflow-hidden"
           >
-            <div className=" relative top-[27.5vh] h-[25vh] w-[20vw] left-[5vw]">
+            <div className=" relative top-[27.5vh] h-[25vh] w-[20vw] left-[5vw] rounded-lg overflow-hidden">
               <Image
                 className=" object-cover"
                 placeholder="blur"
@@ -106,7 +106,7 @@ export default function Home() {
             style={{ scale: scale6 }}
             className="absolute top-0 w-full h-full flex justify-center items-center overflow-hidden"
           >
-            <div className=" relative top-[27.5vh] h-[25vh] w-[30vw] left-[-22.5vw]">
+            <div className=" relative top-[27.5vh] h-[25vh] w-[30vw] left-[-22.5vw] rounded-lg overflow-hidden">
               <Image
                 className=" object-cover"
                 placeholder="blur"
@@ -120,7 +120,7 @@ export default function Home() {
             style={{ scale: scale5 }}
             className="absolute top-0 w-full h-full flex justify-center items-center overflow-hidden"
           >
-            <div className=" relative top-[22.5vh] h-[15vh] w-[15vw] left-[25vw]">
+            <div className=" relative top-[22.5vh] h-[15vh] w-[15vw] left-[25vw] rounded-lg overflow-hidden">
               <Image
                 className=" object-cover"
                 placeholder="blur"
@@ -135,7 +135,6 @@ export default function Home() {
       <div className=" bg-black">
         <Paragrah />
       </div>
-      <div className="h-[100vh] bg-pink-500"></div>
       <Footer />
     </ReactLenis>
   );

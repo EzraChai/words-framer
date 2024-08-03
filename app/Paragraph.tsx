@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const text =
   "Four former Matriculation batch 23/24 students from Negeri Sembilan " +
-  "and Kuala Lumpur going on a trip together to Negeri Sembilan." +
+  "and Kuala Lumpur going on a trip together to Negeri Sembilan. " +
   "It was an amazing experience for them to travel to Negeri Sembilan. " +
   "They had a great time exploring the city and experiencing its culture. " +
   "Their trip was filled with adventure, laughter, and memories that will " +
@@ -15,21 +15,17 @@ export default function Paragrah() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start 0.8", "start start"],
+    offset: ["start 0.6", "start start"],
   });
 
   const paragraph = text.split(" ");
 
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   return (
     <>
-      <div className="h-[100vh]"></div>
+      <div className="h-[50vh]"></div>
       <div className="h-[100vh] flex justify-center items-center">
-        <div className=" text-lime-300 text-6xl max-w-5xl text-pretty ">
-          <motion.p
-            ref={containerRef}
-            className="flex flex-wrap leading-1 gap-3"
-          >
+        <div className=" text-lime-300 p-8 text-4xl md:text-5xl lg:text-6xl max-w-5xl text-pretty ">
+          <p ref={containerRef} className="flex flex-wrap leading-1 gap-3">
             {paragraph.map((word, index) => {
               const start = index / paragraph.length;
               const end = start + 1 / paragraph.length;
@@ -42,7 +38,7 @@ export default function Paragrah() {
                 />
               );
             })}
-          </motion.p>
+          </p>
         </div>
       </div>
       <div className="h-[50vh]"></div>
